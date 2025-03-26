@@ -30,7 +30,7 @@ a(function b() {
 // let count = 0
 // document.getElementById("clickme").addEventListener("click", function () {
 //   console.log("Clicked", ++count);
-//   console.log("data Leak happens here");
+//   console.log("data Leak happens here because count was declared outside i.e. in global scope");
 // })
 
 // to overcome that we wrap entire code into one function

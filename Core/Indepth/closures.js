@@ -94,7 +94,7 @@
 //       console.log(i)
 //     }, i * 1000)
 //   }
-//   console.log("Namaste Javascript"); // here first "Namasate Javascript" will print and then it create loops
+//   console.log("Namaste Javascript"); // here first "Namasate Javascript" will print and then it prints loops
 // }
 // a();
 //
@@ -117,7 +117,7 @@
 // console.log("Second Way - by functions")
 //
 // function c() {
-//   for(i = 1; i <= 5; i++) {
+//   for(var i = 1; i <= 5; i++) {
 //     function d(x) {
 //       setTimeout(() => {
 //         console.log(x);
@@ -130,10 +130,6 @@
 //
 // c();
 
-
-
-
-
 //1. An inner function can be directly called using two parenthesis ()().
 // 2. Even parameters can be passed this way (Remember that the function needs to be returned to do this)
 // 3. Closures can also be used for data hiding and encapsulation. So other code cannot access this value.
@@ -142,7 +138,7 @@
 console.log("Examples of Closures");
 // Examples of Closures
 // Basic closure example
-function fun_1(){
+function fun_1() {
   var var1 = 10;
   function fun_2() {
     console.log(var1);
@@ -156,8 +152,8 @@ fun_1();
 function fun_3() {
   var var2 = 100;
   return () => {
-    console.log(var2);
-  }
+    console.log("Please"  + var2);
+  };
 }
 // var var3 = fun_3();
 // var3();
@@ -174,7 +170,6 @@ function fun_4() {
   return fun_5;
 }
 var var5 = fun_4()();
-
 
 // fourth example
 // what if block scope variable is declared again in the global scope the inner block takes which variable? ans: nearest variable
@@ -229,7 +224,7 @@ function fun_counter() {
   return function increment() {
     count++;
     console.log(count);
-  }
+  };
 }
 
 // console.log(count);// can't access any one
@@ -239,8 +234,6 @@ var real_counter = fun_counter()();
 // in this situation if fun_counter is called from new variable then it is completly new call and counter is set to its default value again
 var real_counter1 = fun_counter()();
 
-
-
 // optimized code
 
 function counter() {
@@ -249,13 +242,12 @@ function counter() {
   this.increment = () => {
     count++;
     console.log(count, "Incremented");
-  }
+  };
   this.decrement = () => {
     count--;
     console.log(count, "Decremented");
-  }
+  };
 }
-
 
 var counter1 = new counter();
 counter1.increment();
