@@ -17,5 +17,24 @@ function isAnagram(s, t) {
     return true;
 }
 
-const result = isAnagram("racecar", "carracd");
+const result = isAnagram("racecar", "carrace");
 console.log(result);
+
+// second way using - hash table
+
+function isAna(s, t) {
+    if(s.length !== t.length) return false;
+
+    const count = new Array(26).fill(0);
+
+    for(let i = 0; i <= s.length; i++) {
+        count[s.charCodeAt(i) - "a".charCodeAt(0)]++;
+        count[t.charCodeAt(i) - "a".charCodeAt(0)]--;
+    }
+
+    return count.every((val) => val === 0);
+}
+
+
+const result2 = isAna("racecar", "carace");
+console.log(result2);
