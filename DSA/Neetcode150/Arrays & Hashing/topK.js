@@ -10,7 +10,9 @@ function topK(nums, k) {
 }
 
 const result = topK([1, 2, 2, 2, 2, 2, 3, 3, 3, 3], 2);
-console.log(result);
+// console.log(result);
+
+// optimized way
 
 function topKK(nums, k) {
     const count = {};

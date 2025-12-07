@@ -15,6 +15,9 @@ function groupAnagram(str) {
 const result = groupAnagram(["act", "pots", "tops", "cat", "stop", "hat"]);
 console.log(result);
 
+
+// optimised way
+
 function groupAna(strs) {
     const res = {};
     for(let str of strs) {
@@ -24,6 +27,7 @@ function groupAna(strs) {
         }
 
         const key = count.join(",");
+        console.log(count);
         if(!res[key]) {
             res[key] = [];
         }
